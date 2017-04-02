@@ -15,3 +15,11 @@
 
 1. 自动搜索超参数的GridSearchCV模块的基本用法
 2. 获取不同超参数组合对应的模型性能，使用pandas.DataFrame模块快速保存至CSV文件。
+
+# 3. evaluate.py
+
+程序列举了高光谱图像重构评价指标及其Python实现
+
+1. MSE
+2. 从PSNR到MPSNR
+3. 从SSIM到MSSIM
