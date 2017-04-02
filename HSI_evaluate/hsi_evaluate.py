@@ -3,7 +3,7 @@ from numpy.linalg import norm
 from skimage.measure import compare_psnr, compare_ssim, compare_mse
 
 
-def psnr(x_true, x_pred):
+def mpsnr(x_true, x_pred):
     """
 
     :param x_true: 高光谱图像：格式：(H, W, C)
@@ -35,7 +35,7 @@ def sam(x_true, x_pred):
     return sam_deg
 
 
-def ssim(x_true,x_pred):
+def mssim(x_true,x_pred):
     """
         :param x_true: 高光谱图像：格式：(H, W, C)
         :param x_pred: 高光谱图像：格式：(H, W, C)
