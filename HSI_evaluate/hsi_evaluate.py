@@ -6,9 +6,9 @@ from skimage.measure import compare_psnr, compare_ssim, compare_mse
 def psnr(x_true, x_pred):
     """
 
-    :param x_true:
-    :param x_pred:
-    :return:
+    :param x_true: 高光谱图像：格式：(H, W, C)
+    :param x_pred: 高光谱图像：格式：(H, W, C)
+    :return: 计算原始高光谱数据与重构高光谱数据的均方误差
     References
     ----------
     .. [1] https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio
@@ -22,7 +22,7 @@ def sam(x_true, x_pred):
     """
     :param x_true: 高光谱图像：格式：(H, W, C)
     :param x_pred: 高光谱图像：格式：(H, W, C)
-    :return: 计算原始高光谱数据与重构高光谱数据之间的光谱角相似度
+    :return: 计算原始高光谱数据与重构高光谱数据的光谱角相似度
     """
     assert x_true.ndim ==3 and x_true.shape == x_pred.shape
     sam_rad = np.zeros(x_pred.shape[0, 1])
@@ -39,7 +39,8 @@ def ssim(x_true,x_pred):
     """
         :param x_true: 高光谱图像：格式：(H, W, C)
         :param x_pred: 高光谱图像：格式：(H, W, C)
-        :return: 计算原始高光谱数据与重构高光谱数据之间的结构相似度
+        :return: 计算原始高光谱数据与重构高光谱数据的结构相似度
     """
     SSIM = compare_ssim(X=x_true, Y=x_pred, multichannel=True)
     return SSIM
+
